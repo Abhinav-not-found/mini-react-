@@ -2,32 +2,96 @@
 
 ### Folder Structure
 
+```text
+.
+├── README.md
+├── tsconfig.json
+├── package.json
+├── index.html
+├── src
+│   ├── main.ts
+│   └── components
+│       └── button.ts
+└── dist
 ```
-README.md
-tsconfig.json
-package.json
-index.html
-src/
- |--- main.ts
- |--- component/
-       |--- button.ts
-dist/
+
+## Naming Conventions
+
+### Folder Names
+
+Use **kebab-case** for folder names.
+
+**Example:**
+
+```text
+hello-world
+user-profile
+auth-service
 ```
 
-### File Casing and Folder Casing
+### File Names & Variables
 
-Folder –> "Kabab case" eg: hello-world
-File/variables -> "Camel case" eg: authController.js
-Class name -> "Pascal case" eg: KnowledgeTransfer
+Use **camelCase** for file names and variables.
 
-### Github Setup
+**Examples:**
 
-Following are the rules for commit message:
+```js
+authController.js;
+userService.js;
+getUserProfile();
+```
 
-1. If you implemented a new feature then start writing your commit message with "feat:<describe_feature>"
-2. If you fix something inside a codebase then start writing your commit message with "fix: <describe_fix>"
+### Class Names
 
-Following are the rules for creating Pull Request before merge.
+Use **PascalCase** for class names.
 
-1. Always merge code by creating a Pull Request.
-2. Avoid direct push on "main" branch.
+**Example:**
+
+```js
+class KnowledgeTransfer {}
+class UserService {}
+```
+
+---
+
+## Git Workflow
+
+### Commit Message Convention
+
+Follow the Conventional Commits standard.
+
+#### New Feature
+
+```text
+feat: add user authentication
+feat: implement dark mode
+```
+
+#### Bug Fix
+
+```text
+fix: resolve login redirect issue
+fix: handle null user response
+```
+
+### Pull Request Rules
+
+1. Always create a Pull Request before merging code.
+2. Do not push directly to the `main` branch.
+3. Ensure all checks and reviews pass before merging.
+4. Keep Pull Requests focused on a single feature or fix whenever possible.
+
+## Codebase Setup
+
+The project is configured with the following tools and development practices:
+
+### Build & Development
+
+- **Bundler** — Configure the project bundler and build pipeline.
+- **Tailwind CSS** — Set up Tailwind CSS for styling.
+- **Auto Restart Dev Server** — Automatically restart the development server when required.
+
+### GitHub
+
+- **GitHub Setup** — Initialize the repository and configure the remote.
+- **Branch Protection** — Protect the `main` branch from direct pushes and require Pull Requests for merges.

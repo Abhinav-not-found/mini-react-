@@ -88,8 +88,11 @@ The project is configured with the following tools and development practices:
 ### Build & Development
 
 - **Bundler** — Configure the project bundler and build pipeline.
+  - npx tsc --init
+  - npm init
 - **Tailwind CSS** — Set up Tailwind CSS for styling.
 - **Auto Restart Dev Server** — Automatically restart the development server when required.
+  - serve, tailwindcss cli, EDBuild, browser-sync, tsc, concurrently
 
 ### GitHub
 

@@ -1,0 +1,38 @@
+{
+  "name": "mini-react",
+  "version": "1.0.0",
+  "description": "Building mini react from scratch.",
+  "homepage": "https://github.com/Abhinav-not-found/mini-react-#readme",
+  "bugs": {
+    "url": "https://github.com/Abhinav-not-found/mini-react-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhinav-not-found/mini-react-.git"
+  },
+  "license": "ISC",
+  "author": "abhinav kumar",
+  "type": "module",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev:ts": "node init && esbuild src/main.ts --bundle --outfile=dist/main.js --format=esm --sourcemap --watch",
+    "dev:typecheck": "node init && tsc --noEmit --watch --preserveWatchOutput",
+    "dev:css": "node init && npx @tailwindcss/cli -i ./src/style/input.css -o ./dist/style/output.css --watch",
+    "dev:serve": "node init && browser-sync start --server --single --files \"dist/**/*.js,dist/**/*.css,index.html\" --no-notify --port 3000",
+    "dev": "node init && concurrently \"npm run dev:ts\" \"npm run dev:typecheck\" \"npm run dev:css\" \"npm run dev:serve\" --names \"ESB,TSC,CSS,BS \" --prefix-colors \"cyan,blue,green,yellow\"",
+    "build": "node init && tsc --noEmit && esbuild src/main.ts --bundle --outfile=dist/main.js --format=esm --minify && npx @tailwindcss/cli -i ./src/style/input.css -o ./dist/style/output.css"
+  },
+  "devDependencies": {
+    "serve": "^14.2.6",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^10.0.5",
+    "dotenv": "^8.2.0",
+    "esbuild": "^0.28.2",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^4.3.3"
+  }
+}
